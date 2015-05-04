@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="copyright" content="2014, Lorenzo Buosi, chrometaphore.com" />  
+    <title>INK</title>
+
+    <!-- stylesheets -->
+    <link type="text/css" rel="stylesheet" href="style/main.css" />
+    <link type="text/css" rel="stylesheet" href="style/theme_dark.css" />
+
+    <!-- js -->
+    <script src="./ext.js"></script>
+    <script src="./lib/CSInterface-4.0.0.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body onLoad="onLoaded()">
+    <div id="UI">
+
+        <!-- Main INK button -->
+        <div class="row">
+            <div class="content">
+                <div id="ink" onclick="jsxcall_ink(['layerMeasureX','layerMeasureY','layerDocumentation'])" title="Document and measure selected elements.">
+                    <div id="btn">
+                        <img id="ink_icon" src="assets/ink_btn_icon_default.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- horizontal ruler -->
+        <div class="row hr"></div>
+
+        <!-- measures -->
+        <div class="row" id="measure_btns">
+            <div class="content">
+                <div class="stdBtn lxgutter rxgutter" id="btn_measure_obj_x" onclick="jsxcall_ink(['layerMeasureX'])" title="Measure elements width">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_obj_x@2x.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="stdBtn rxgutter" id="btn_measure_obj_y" onclick="jsxcall_ink(['layerMeasureY'])" title="Measure elements height">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_obj_y@2x.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="stdBtn rxgutter" id="btn_measure_obj_xy" onclick="jsxcall_ink(['layerMeasureX','layerMeasureY'])" title="Measure elements width and height">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_obj_xy@2x.png" alt="" />
+                    </div>
+                </div>  
+
+                <div class="stdBtn rxgutter" id="btn_measure_sel_x" onclick="jsxcall_ink(['selectionMeasureX'])" title="Measure selection width">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_sel_x@2x.png" alt="" />
+                    </div>
+                </div> 
+
+                <div class="stdBtn rxgutter" id="btn_measure_sel_y" onclick="jsxcall_ink(['selectionMeasureY'])" title="Measure selection height">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_sel_y@2x.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="stdBtn" id="btn_measure_sel_xy" onclick="jsxcall_ink(['selectionMeasureX','selectionMeasureY'])" title="Measure selection width and height">
+                    <div class="icon">
+                        <img src="assets/ps.dark/icon_measure_sel_xy@2x.png" alt="" />
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <!-- tabs -->
+        <div class="row" id="tabs">
+        	<div class="content">
+        		<div class="tab on" onclick="switchTab(0)"><p>Output</p></div>
+        		<div class="tab off" onclick="switchTab(1)"><p>Style</p></div>
+        		<div class="tab off" onclick="switchTab(2)"><p>Properties</p></div>
+        	</div>
+        </div>
+
+        <!-- settings -->
+        <div class="row" id="settings">
+            <div class="content">
+
+            	<!-- tab #1 -->
+            	<div id="tab_content_0">
+	                <!-- layerDocumentation_printObj -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Print layer main properties</p>
+	                    </div>
+	                    <div class="switch on" id="layerDocumentation_printObj" onclick="editSwitchSettings('layerDocumentation_printObj')">
+	                        <div class="handle"></div>
+	                    </div>
+	                </div> 
+	                
+	                <div class="row hr"></div> 
+
+	                <!-- layerDocumentation_printColor -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Print layer colors</p>
+	                    </div>
+	                    <div class="switch on" id="layerDocumentation_printColor" onclick="editSwitchSettings('layerDocumentation_printColor','y')">
+	                        <div class="handle"></div>
+	                    </div>
+	                </div> 
+	                
+	                <div class="row hr"></div> 
+
+	                <!-- layerDocumentation_printFx -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Print layer effects</p>
+	                    </div>
+	                    <div class="switch on" id="layerDocumentation_printFx" onclick="editSwitchSettings('layerDocumentation_printFx','y')">
+	                        <div class="handle"></div>
+	                    </div>
+	                </div> 
+	                
+	                <div class="row hr"></div> 
+
+	                <!-- generate_xml -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Generate .xml file</p>
+	                    </div>
+	                    <div class="switch on" id="generate_xml" onclick="editSwitchSettings('generate_xml','y')">
+	                        <div class="handle"></div>
+	                    </div>
+	                </div> 
+                </div>
+                <!-- end of tab #1 -->
+
+                <!-- tab #2 -->
+                <div id="tab_content_1">
+	                <!-- output_text_color -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Output text color</p>
+	                    </div>
+	                    <div class="textArea">
+	                    	<input type="text" name="output_text_color" value="#28e4b9" maxlength="7" onkeypress="return checkColorValue(event)" onblur="return checkColorValue(event,'y')"></input>
+	                    	<div class="colorPreview" id="output_text_color_preview"></div>	
+	                    </div> 
+	                </div>
+
+	                <div class="row hr"></div> 
+
+	                <!-- measures_color -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Measures color</p>
+	                    </div>
+	                    <div class="textArea">
+	                    	<input type="text" name="measures_color" value="#28e4b9" maxlength="7" onkeypress="return checkColorValue(event)" onblur="return checkColorValue(event,'y')"></input>
+	                    	<div class="colorPreview" id="measures_color_preview"></div>	
+	                    </div> 
+	                </div>
+
+	                <div class="row hr"></div> 
+
+	                <!-- text_bubble_color -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Text bubble color</p>
+	                    </div>
+	                    <div class="textArea">
+	                    	<input type="text" name="text_bubble_color" value="#28e4b9" maxlength="7" onkeypress="return checkColorValue(event)" onblur="return checkColorValue(event,'y')"></input>
+	                    	<div class="colorPreview" id="text_bubble_color_preview"></div>	
+	                    </div> 
+	                </div> 
+
+	                <div class="row hr"></div> 
+
+	                <!-- text_bubble_styling -->
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Text bubble</p>
+	                    </div>
+	                    <div class="switch on" id="text_bubble_styling" onclick="editSwitchSettings('text_bubble_styling','y')">
+	                        <div class="handle"></div>
+	                    </div>
+	                </div> 
+	            </div>
+                <!-- end of tab #2 -->
+
+                <!-- tab #3 -->
+                <div id="tab_content_2">
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Text size</p>
+	                    </div>
+	                    <div class="selector">
+	                        <div class="prev" onclick="stepTextSize(this,'y')">
+	                            <img src="assets/arrow_l.png" alt="prev" />
+	                        </div>
+	                        <div class="label">
+	                            <p id="text_size">10</p>
+	                        </div>
+	                        <div class="next" onclick="stepTextSize(this,'y')">
+	                            <img src="assets/arrow_r.png" alt="next" />
+	                        </div>
+	                    </div>
+	                </div> 
+
+	                <div class="row hr"></div>
+
+	                <div class="row">
+	                    <div class="lbl">
+	                        <p>Measures stroke</p>
+	                    </div>
+	                    <div class="selector">
+	                        <div class="prev" onclick="stepRulerStroke(this,'y')">
+	                            <img src="assets/arrow_l.png" alt="prev" />
+	                        </div>
+	                        <div class="label">
+	                            <p id="ruler_stroke">1</p>
+	                        </div>
+	                        <div class="next" onclick="stepRulerStroke(this,'y')">
+	                            <img src="assets/arrow_r.png" alt="next" />
+	                        </div>
+	                    </div> 
+	                </div>
+
+                </div>
+                <!--end of tab #3 -->
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

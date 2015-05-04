@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ExtensionManifest Version="4.0" ExtensionBundleId="Ink" ExtensionBundleVersion="1.3.5"
+		ExtensionBundleName="Ink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Author>
+		<![CDATA[chrometaphore.com]]>
+	</Author>	<Contact mailto="info@chrometaphore.com">
+		<![CDATA[Ink. Document your layers!
+http://ink.chrometaphore.com]]>
+	</Contact>	<ExtensionList>
+		<Extension Id="Ink.extension1" Version="1.0" />
+	</ExtensionList>
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="PHXS" Version="[14.0,15.9]" />
+			<Host Name="PHSP" Version="[14.0,15.9]" />
+		</HostList>
+		<LocaleList>
+			<Locale Code="All" />
+		</LocaleList>
+		<RequiredRuntimeList>
+			<RequiredRuntime Name="CSXS" Version="5.0" />
+
+		</RequiredRuntimeList>
+	</ExecutionEnvironment>
+	<DispatchInfoList>
+		<Extension Id="Ink.extension1">
+			<DispatchInfo >
+				<Resources>
+				<MainPath>./index.html</MainPath>
+				<ScriptPath>./Ink.jsx</ScriptPath>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>Panel</Type>
+					<Menu>Ink</Menu>
+					<Geometry>
+						<Size>
+							<Height>320</Height>
+							<Width>220</Width>
+						</Size>
+					</Geometry>
+					<Icons>
+						<Icon Type="Normal">./icons/panel_icon_light.png</Icon>
+						<Icon Type="DarkNormal">./icons/panel_icon_dark.png</Icon>
+					</Icons>
+				</UI>
+			</DispatchInfo>
+		</Extension>
+	</DispatchInfoList>
+</ExtensionManifest>

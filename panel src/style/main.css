@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#UI {
+	width:100%;
+}
+
+.row {
+	width:100%;
+	float:left;
+}
+.row .content {
+	width:220px;
+	margin:auto;
+}
+.row.centered {
+	width:100%;
+	text-align: center;
+}
+
+/* horizontal ruler */
+.hr {
+	margin:10px 0 10px 0;
+	height:1px;
+}
+
+/* typography */
+p {
+	font-size:9px;
+	letter-spacing: 0.2em;
+}
+
+/* selector component */
+.selector {	
+}
+.selector p {	
+	cursor:default;
+}
+.selector .label {
+	display:inline-block;
+	cursor:default;	
+}
+.selector .prev {
+	display:inline-block;
+	cursor:pointer;	
+}
+.selector .next {
+	display:inline-block;
+	cursor:pointer;	
+}
+.selector .prev img {
+	width:4px;
+	height:5px;	
+}
+.selector .next img {	
+	width:4px;
+	height:5px;
+}
+.selector.enabled .prev {
+	opacity:1;
+	cursor:pointer;
+}
+.selector.enabled .next {
+	opacity:1;
+	cursor:pointer;
+}
+.selector.disabled .prev {
+	opacity:0.2;
+	cursor:default;
+}
+.selector.disabled .next {
+	opacity:0.2;
+	cursor:default;
+}
+
+/* standard buttons */
+.stdBtn {
+	-webkit-border-radius: 4px;
+	border-radius:4px;
+}
+
+.stdBtn .icon {
+	-webkit-border-radius: 4px;
+	border-radius:4px;
+}
+
+/* tabs */
+#tabs {
+	margin:10px 0 0 0;
+}
+.tab {
+	cursor:pointer;
+	display:inline-block;
+	padding:0 10px;	
+}
+.tab.on {
+	/* theme-specific */
+}
+.tab.off {
+	/* theme-specific */	
+}
+#tab_content_0 {
+	display:block;
+}
+#tab_content_1 {
+	display:none;
+}
+#tab_content_2 {
+	display:none;
+}
+
+/* standard switch */
+.switch {
+	float:left;
+	position:relative;
+	width:7px;
+	height:15px;
+}
+.switch.on {
+	/* theme-specific */	
+}
+.switch.off {
+	/* theme-specific */	
+}
+.switch .handle {
+	position:absolute;
+	width:7px;
+	height:7px;
+}
+.switch.on .handle {
+	top:0;
+	left:0;	
+}
+.switch.off .handle {
+	top:8px;
+	left:0;	
+}
+/* horizontal switch */
+.hswitch {
+	float:left;
+	position:relative;
+	width:15px;
+	height:7px;
+}
+.hswitch.on {
+	/* theme-specific */	
+}
+.hswitch.off {
+	/* theme-specific */	
+}
+.hSwitchBlock .l.on {
+	/* theme-specific */	
+}
+.hSwitchBlock .r.on {
+	/* theme-specific */	
+}
+.hSwitchBlock .l.off {
+	/* theme-specific */	
+}
+.hSwitchBlock .r.off {
+	/* theme-specific */	
+}
+
+.hswitch .handle {
+	position:absolute;
+	width:7px;
+	height:7px;
+}
+.hswitch.on .handle {
+	top:0;
+	left:8px;	
+}
+.hswitch.off .handle {
+	top:0px;
+	left:0px;	
+}
+/* standard text input area */
+.textArea {
+	float:left;
+	-webkit-border-radius: 4px;
+	border-radius:4px;
+}
+.textArea input[type=text] {
+	font-family: Arial, Helvetica, sans-serif;
+	margin:3px 0 0 6px;
+	float:left;
+	width:50px;
+	background-color:rgba(0,0,0,0);
+	border:none;
+}
+.textArea input[type=text]:focus {
+    outline: 0;
+}
+.textArea .colorPreview {
+	float:left;
+	width:8px;
+	height:8px;
+	background-color:#28e4b9;
+	margin: 6px;
+}
+
+/* main ink btn */
+#ink {
+	margin:10px 0 0 10px;
+	width:192px;
+	height:40px;
+	padding:4px;
+}
+#ink #btn {
+	width:192px;
+	height:40px;
+}
+#ink #btn #ink_icon {
+	width:18px;
+	height:27px;
+	padding:7px 0 0 0;
+	border:0;
+}
+
+/* document layers btn */
+#btn_document {
+	width:198px;
+	height:22px;
+	margin: 0 0 0 10px;
+}
+#btn_document .icon {
+	width:198px;
+	height:22px;
+}
+#btn_document .icon img {
+	width:10px;
+	height:11px;
+	margin:5px 0 0 94px;
+}
+
+/* measures btn area */
+#measure_btns .lxgutter {
+	margin-left:10px;
+}
+#measure_btns .rxgutter {
+	margin-right:7px;
+}
+#measure_btns .stdBtn {
+	float:left;
+	width:25px;
+	height:25px;
+}
+#measure_btns .icon {
+	float:left;
+	margin: 3px 0 0 3px;
+	width:18px;
+	width:18px;
+}
+#measure_btns .icon img {
+	width:18px;
+	width:18px;
+}
+
+
+/* settings */
+#settings {
+	margin:0;
+	padding:5px 0;
+	overflow:hidden;
+	height:auto;
+}
+#settings #btn {	
+}
+#settings #btn img {
+	width:14px;
+	height:15px;	
+}
+#settings .hr {
+	margin:5px 0;
+}
+#settings .lbl {
+	float:left;
+	margin:0 0 0 10px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	cursor:default;
+}
+#settings .switch {
+	float:right;
+	margin:5px 10px 0 0;
+}
+#settings .textArea {
+	float:right;
+	margin:3px 4px 0 0;
+}
+#settings .hSwitchBlock {
+	float:right;
+	margin:9px 10px 0 0;
+}
+#settings .hSwitchBlock .l, .r {
+	float:left;
+	font-size:9px;
+	letter-spacing: 0.2em;
+}
+#settings .hSwitchBlock .l {
+	margin:0 4px 0 0;
+}
+#settings .hSwitchBlock .r {
+	margin:0 0 0 4px;
+}
+#settings .selector {
+	float:right;
+	margin-right:4px;
+}
+
+
+
+
+
+
+
